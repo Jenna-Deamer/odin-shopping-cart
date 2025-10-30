@@ -1,12 +1,17 @@
-import NavMenu from './components/Nav/NavMenu'
+import { Outlet } from "react-router";
+import NavMenu from "./components/Shared/Nav/NavMenu";
 
 function App() {
 
-  return (
-    <>
-        <NavMenu/>
-    </>
-  )
+    return (
+        <>
+            <NavMenu />
+            <main>
+               <Outlet/>
+            </main>
+
+        </>
+    )
 }
 
 export default App

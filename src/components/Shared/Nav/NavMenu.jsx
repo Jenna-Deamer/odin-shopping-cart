@@ -5,9 +5,9 @@ function NavMenu() {
   return (
     <nav className={styles.nav}>
       <ul>
-        <li><Link tp="/">Store Name</Link></li>
-        <li><Link to="shop">Shop</Link></li>
-        <li className={styles.cart}><Link href="cart">Cart</Link></li>
+        <li><Link to="/">Store Name</Link></li>
+        <li><Link to="/shop">Shop</Link></li>
+        <li className={styles.cart}><Link to="/cart">Cart</Link></li>
       </ul>
     </nav>
   );
