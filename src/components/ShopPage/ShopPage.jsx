@@ -2,7 +2,7 @@ import { useParams, Navigate } from 'react-router-dom';
 import { validCategories } from "./categories";
 import capitalizeFirstLetter from "../../utils/upperCaseFirstLetter"
 
-function ShopPage() {
+function ShopPage({products}) {
     let { category } = useParams();
     if (category && !validCategories.includes(category)) {
         return <Navigate to='/error' />
@@ -15,6 +15,7 @@ function ShopPage() {
     return (
         <div>
             <h1>{category ? `${category} Products` : "All Products"}</h1>
+            <p>{products}</p>
         </div>
 
     )

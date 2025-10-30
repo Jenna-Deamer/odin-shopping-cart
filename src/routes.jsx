@@ -1,4 +1,4 @@
-import App from './App';
+import App from '../App';
 import HomePage from './components/HomePage/HomePage';
 import ShopPage from './components/ShopPage/ShopPage';
 import ErrorPage from './components/ErrorPage/ErrorPage';
