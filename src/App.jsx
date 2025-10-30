@@ -1,9 +1,10 @@
-function App() {
+import NavMenu from './components/Nav/NavMenu'
 
+function App() {
 
   return (
     <>
-        <h1>Demo</h1>
+        <NavMenu/>
     </>
   )
 }

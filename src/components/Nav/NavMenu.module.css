@@ -1,0 +1,22 @@
+.nav{
+    background-color: #19323C;
+    padding: 1em;
+  
+}
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav li {
+    margin-right: 1rem;
+ 
+}
+
+.nav li a{
+    color: #fff;
+    text-decoration: unset;
+}
+.cart {
+    margin-left: auto;
+}
