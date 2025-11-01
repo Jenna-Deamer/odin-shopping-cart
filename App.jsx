@@ -8,8 +8,6 @@ function App() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Failed to load products</p>;
 
-  console.log(products);
-
   return (
     <>
       <NavMenu />

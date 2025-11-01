@@ -1,9 +1,11 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { validCategories } from "./categories";
 import capitalizeFirstLetter from "../../utils/upperCaseFirstLetter"
+import { useOutletContext } from "react-router";
 
-function ShopPage({products}) {
+function ShopPage() {
     let { category } = useParams();
+    const { products } = useOutletContext();
     if (category && !validCategories.includes(category)) {
         return <Navigate to='/error' />
     }
@@ -11,12 +13,23 @@ function ShopPage({products}) {
     if (category) {
         category = capitalizeFirstLetter(category);
     }
-
     return (
-        <div>
+        <section>
             <h1>{category ? `${category} Products` : "All Products"}</h1>
-            <p>{products}</p>
-        </div>
+            <section data-testid="products-wrapper">
+                {products.map((product) => (
+                    <div key={product.id}>
+                        <div className='product-details'>
+                            <p>{product.title}</p>
+                            <p>{product.price}</p>
+                        </div>
+
+                        <img src={product.image} />
+
+                    </div>
+                ))}
+            </section>
+        </section>
 
     )
 }
