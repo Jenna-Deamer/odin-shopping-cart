@@ -1,0 +1,94 @@
+.productCardWrapper {
+    padding: 2em 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1500px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.productCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform;
+}
+
+.productCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.productDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+
+.productDetails p {
+    font-size: 1.1em;
+}
+
+.productDetails h2 {
+    font-size: 1.2em;
+}
+
+.productCard img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: 1.5em 0;
+}
+
+.productButtons {
+    display: flex;
+    margin-top: auto;
+    gap: 1em;
+
+}
+
+.productButtons button {
+    background-color: rgb(218, 107, 3);
+    color: #fff;
+    border: unset;
+    padding: .2em .5em;
+    transition: .2s ease-in-out;
+}
+
+.productButtons button:hover {
+    background-color: rgb(189, 94, 6);
+
+}
+
+.productButtons button:active {
+    background-color: rgb(243, 147, 58);
+}
+
+.productQtyButtons {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.productQtyButtons button {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.4em;
+}
+
+.addCartBtn {
+    border-radius: 8px;
+    font-weight: 700;
+}
