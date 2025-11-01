@@ -10,7 +10,7 @@
 .productCard {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 1em;
@@ -19,6 +19,7 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     will-change: transform;
 }
+
 
 .productCard:hover {
     transform: translateY(-5px);
@@ -29,7 +30,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5em;
-    margin-bottom: 1em;
+    margin: 1em;
 }
 
 .productDetails p {
@@ -44,7 +45,7 @@
     width: 150px;
     height: 150px;
     object-fit: contain;
-    margin: 1.5em 0;
+    margin: 0 auto;
 }
 
 .productButtons {

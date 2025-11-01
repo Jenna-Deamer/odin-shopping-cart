@@ -17,6 +17,7 @@
 .nav li a{
     color: #fff;
     text-decoration: unset;
+    font-size: 1.4em;
 }
 .cart {
     margin-left: auto;
