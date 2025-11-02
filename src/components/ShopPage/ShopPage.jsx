@@ -27,7 +27,7 @@ function ShopPage() {
     return (
         <section>
             <h1>{category ? `${category} Products` : "All Products"}</h1>
-            <div className={styles.productCardWrapper}>
+            <div className={styles.productCardWrapper} data-testid='products-wrapper'>
 
                 {products.map(product => (
                     <ProductCard

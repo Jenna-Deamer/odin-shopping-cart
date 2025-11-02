@@ -14,7 +14,7 @@ export const ProductCard = ({ product, onAddToCart }) => {
     };
 
     return (
-        <div className={styles.productCard}>
+        <div className={styles.productCard} data-testid='product-card'>
             <img src={product.image} alt={product.title} />
             <div className={styles.productDetails}>
                 <h2>{product.title}</h2>
