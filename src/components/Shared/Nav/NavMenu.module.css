@@ -1,9 +1,10 @@
-.nav{
+.nav {
     background-color: #19323C;
     padding: 1em;
     margin-bottom: 1em;
-  
+
 }
+
 .nav ul {
     display: flex;
     list-style: none;
@@ -11,14 +12,33 @@
 
 .nav li {
     margin-right: 1rem;
- 
+
 }
 
-.nav li a{
+.nav li a {
     color: #fff;
     text-decoration: unset;
     font-size: 1.4em;
+    transition: .2s ease-in-out;
 }
+
+.nav li a:hover {
+    color: #b4b4b4;
+}
+
 .cart {
-    margin-left: auto;
+    position: relative;
+}
+
+.cart small {
+    position: absolute;
+    left: 42px;
+    bottom: 20px;
+    background-color: rgb(218, 107, 3);
+    color: #fff;
+    border-radius: 50%;
+    padding: 0 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+
 }
