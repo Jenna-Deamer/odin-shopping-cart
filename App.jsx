@@ -7,12 +7,12 @@ function App() {
     const { products, error, loading } = useStoreProducts();
     const [cartList, setCartList] = useState([]);
     const [totalItems, setTotalItems] = useState(0);
+    const [total, setTotal] = useState(0)
 
     useEffect(() => {
         setTotalItems(cartList.reduce((sum, product) => sum + (product.quantity || 0), 0));
+        setTotal(cartList.reduce((sum, product) => sum + (product.price) * (product.quantity),0))
     }, [cartList]);
-
-    console.log(totalItems)
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Failed to load products</p>;
@@ -21,7 +21,7 @@ function App() {
         <>
             <NavMenu  totalItems={totalItems}/>
             <main>
-                <Outlet context={{ products, cartList, setCartList }} />
+                <Outlet context={{ products, cartList, setCartList, total }} />
             </main>
         </>
     );

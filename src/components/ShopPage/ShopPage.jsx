@@ -19,9 +19,7 @@ function ShopPage() {
     }
 
     const handleAddToCart = (selectedProduct) => {
-        console.log(selectedProduct)
         setCartList(prevCart => [...prevCart, selectedProduct]);
-        console.log(cartList)
     }
 
     return (
@@ -37,7 +35,7 @@ function ShopPage() {
                     />
                 ))}
             </div>
-            </section>
+        </section>
     )
 }
 

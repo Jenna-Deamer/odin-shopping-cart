@@ -33,12 +33,16 @@
 .cart small {
     position: absolute;
     left: 42px;
-    bottom: 20px;
+    bottom: 18px;
     background-color: rgb(218, 107, 3);
     color: #fff;
-    border-radius: 50%;
-    padding: 0 6px;
+    border-radius: 100%;
     font-size: 0.75rem;
     font-weight: 600;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
