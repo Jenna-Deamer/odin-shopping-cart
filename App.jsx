@@ -5,7 +5,7 @@ import useStoreProducts from "./src/utils/getProducts";
 
 function App() {
     const { products, error, loading } = useStoreProducts();
-    const { cartList, setProductList } = useState(null);
+    const [cartList, setCartList] = useState([]);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Failed to load products</p>;
@@ -14,7 +14,7 @@ function App() {
         <>
             <NavMenu />
             <main>
-                <Outlet context={{ products }} />
+                <Outlet context={{ products, cartList, setCartList }} />
             </main>
         </>
     );

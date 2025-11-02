@@ -3,11 +3,13 @@ import { validCategories } from "./categories";
 import capitalizeFirstLetter from "../../utils/upperCaseFirstLetter"
 import { useOutletContext } from "react-router";
 import styles from './Shop.module.css';
+import ProductCard from "./ProductCard";
 
 
 function ShopPage() {
     let { category } = useParams();
-    const { products } = useOutletContext();
+    const { products, cartList, setCartList } = useOutletContext();
+
     if (category && !validCategories.includes(category)) {
         return <Navigate to='/error' />
     }
@@ -15,31 +17,27 @@ function ShopPage() {
     if (category) {
         category = capitalizeFirstLetter(category);
     }
+
+    const handleAddToCart = (selectedProduct) => {
+        console.log(selectedProduct)
+        setCartList(prevCart => [...prevCart, selectedProduct]);
+        console.log(cartList)
+    }
+
     return (
         <section>
             <h1>{category ? `${category} Products` : "All Products"}</h1>
-            <section data-testid="products-wrapper" className={styles.productCardWrapper}>
-                {products.map((product) => (
-                    <div key={product.id} className={styles.productCard}>
-                        <img src={product.image} />
-                        <div className={styles.productDetails}>
-                            <h2>{product.title}</h2>
-                            <p>${product.price}</p>
-                        </div>
+            <div className={styles.productCardWrapper}>
 
-                        <div className={styles.productButtons}>
-                            <div className={styles.productQtyButtons}>
-                                <button>-</button>
-                                <p>1</p>
-                                <button>+</button>
-                            </div>
-                            <button className={styles.addCartBtn}>Add to Cart</button>
-                        </div>
-                    </div>
+                {products.map(product => (
+                    <ProductCard
+                        key={product.id}
+                        product={product}
+                        onAddToCart={handleAddToCart}
+                    />
                 ))}
+            </div>
             </section>
-        </section>
-
     )
 }
 

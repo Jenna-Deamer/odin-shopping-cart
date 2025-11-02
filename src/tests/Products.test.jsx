@@ -32,3 +32,18 @@ it('/Shop should render 20 product cards', () => {
   const productCards = within(wrapper).getAllByText(/Product/i);
   expect(productCards).toHaveLength(20);
 });
+
+
+it('increment should + qty', () => {
+
+})
+
+
+it('decrement should - qty', () => {
+
+})
+
+
+it('Add to cart should add product to cartList with accurate qty', () => {
+
+})
