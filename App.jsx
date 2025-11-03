@@ -4,7 +4,7 @@ import NavMenu from "./src/components/Shared/Nav/NavMenu";
 import useStoreProducts from "./src/utils/getProducts";
 
 function App() {
-    const { products, error, loading } = useStoreProducts();
+    const { products, error, loading, setProducts } = useStoreProducts();
     const [cartList, setCartList] = useState([]);
     const [totalItems, setTotalItems] = useState(0);
     const [total, setTotal] = useState(0)
@@ -21,7 +21,7 @@ function App() {
         <>
             <NavMenu  totalItems={totalItems}/>
             <main>
-                <Outlet context={{ products, cartList, setCartList, total }} />
+                <Outlet context={{ setProducts,products, cartList, setCartList, total }} />
             </main>
         </>
     );

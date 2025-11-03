@@ -16,7 +16,7 @@ const useStoreProducts = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  return { products, error, loading };
+  return { products,setProducts, error, loading };
 };
 
 export default useStoreProducts;
